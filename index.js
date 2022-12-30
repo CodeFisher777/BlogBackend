@@ -7,14 +7,12 @@ import { handleValidationErrors, checkAuth } from './utils/index.js';
 import { UserController, PostController } from './controllers/index.js';
 
 mongoose
-  .connect(pocess.env.MONGODB_URI)
+
+  .connect(
+    'mongodb+srv://admin:wwwwww@cluster0.regbbwg.mongodb.net/blog?retryWrites=true&w=majority',
+  )
   .then(() => console.log('DB ok'))
   .catch((err) => console.log('DB error', err));
-// .connect(
-//   'mongodb+srv://admin:wwwwww@cluster0.regbbwg.mongodb.net/blog?retryWrites=true&w=majority',
-// )
-// .then(() => console.log('DB ok'))
-// .catch((err) => console.log('DB error', err));
 
 const app = express();
 const storage = multer.diskStorage({
@@ -60,9 +58,3 @@ app.listen(4444, (err) => {
   }
   console.log('Server Ok');
 });
-// app.listen(4444, (err) => {
-//   if (err) {
-//     return console.log(err);
-//   }
-//   console.log('Server Ok');
-// });
