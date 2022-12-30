@@ -54,9 +54,15 @@ app.patch(
 );
 
 //настройка порта
-app.listen(4444, (err) => {
+app.listen(process.env.PORT || 4444, (err) => {
   if (err) {
     return console.log(err);
   }
   console.log('Server Ok');
 });
+// app.listen(4444, (err) => {
+//   if (err) {
+//     return console.log(err);
+//   }
+//   console.log('Server Ok');
+// });
